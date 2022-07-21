@@ -1,0 +1,20 @@
+﻿@page "/ro/counter"
+@page "/en/counter"
+@inject IStringLocalizer<App> L
+
+<PageTitle>@L["Counter"]</PageTitle>
+
+<h1>@L["Counter"]</h1>
+
+<p role="status">@L["Current count:"] @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">@L["Click me"]</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
